@@ -1,0 +1,88 @@
+---
+title: "My New PC & Blender Donut"
+description: "Built a new PC myself, but it still costs a kidney."
+date: "Dec 31, 2024"
+---
+
+import video1 from "./Testing-Before-Build.mp4";
+import video2 from "./Pc-Bassically-Built.mp4";
+import video3 from "./Donuts.mp4";
+
+This is a short post about my new PC build and my first time making an animation in Blender.
+
+---
+
+## Specs
+
+Here’s the list of components I used for the build:
+
+| Type              | Item                                                                                                                                                                            | Price                        |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| **CPU**           | [AMD Ryzen 9 7950X 4.5 GHz 16-Core Processor](https://www.megekko.nl/product/8200/294851/Socket-AM5-Processoren/AMD-Ryzen-9-7950X-Processor)                                    | €489.00 @ Megekko            |
+| **CPU Cooler**    | [Noctua NH-D15 chromax.black 82.52 CFM CPU Cooler](https://azerty.nl/product/noctua-nh-d15-chromax-black-koeler-voor-processor/4056641)                                         | €110.95 @ Azerty             |
+| **Thermal Paste** | [Noctua NT-H2 3.5 g Thermal Paste](https://www.megekko.nl/product/2504/248137/Koelpasta-en-pads/Noctua-NT-H2-3-5g)                                                              | €12.90 @ Megekko             |
+| **Motherboard**   | [Asus ROG STRIX B650E-F GAMING WIFI ATX AM5 Motherboard](https://www.megekko.nl/product/8197/1070488/AMD-Socket-AM5-Moederborden/ASUS-ROG-STRIX-B650E-F-GAMING-WIFI)            | €209.00 @ Megekko            |
+| **Memory**        | [G.Skill Trident Z5 RGB 64 GB (2 x 32 GB) DDR5-6400 CL32 Memory](https://www.megekko.nl/product/7962/1072110/DDR5-Geheugen/G-Skill-DDR5-Trident-Z5-RGB-2x32GB-6400)             | €254.90 @ Megekko            |
+| **Storage**       | [Samsung 990 Pro 4 TB M.2-2280 PCIe 4.0 X4 NVME Solid State Drive](https://www.amazon.nl/gp/product/B0CBYZ6DD1/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)                | €325.00 @ Amazon Netherlands |
+| **Video Card**    | [Asus ProArt OC GeForce RTX 4070 Ti SUPER 16 GB Video Card](https://azerty.nl/product/proart-rtx4070tis-o16g/6624775)                                                           | €979.00 @ Azerty             |
+| **Case**          | [Fractal Design North XL ATX Full Tower Case](https://www.megekko.nl/product/2013/959495/PC-Behuizingen/Fractal-Design-North-XL-Charcoal-Black-Behuizing)                       | €189.00 @ Megekko            |
+| **Power Supply**  | [Thermaltake Toughpower GF3 TT Premium 850 W 80+ Gold Certified Fully Modular ATX Power Supply](https://azerty.nl/product/thermaltake-toughpower-gf3-850w-gold-voeding/5017227) | €133.00 @ Azerty             |
+| **Case Fan**      | [Noctua A14 PWM chromax.black.swap 82.52 CFM 140 mm Fan](https://www.megekko.nl/product/1995/376150/Case-fans/Noctua-NF-A14-PWM-chromax-black-swap-140mm)                       | €23.90 @ Megekko             |
+| **Total**         |                                                                                                                                                                                 | **€2726.65**                 |
+
+> **Note:** I didn’t actually need to buy thermal paste since some came with the CPU cooler. RIP €12.90—though, considering I had to metaphorically sell a kidney for the rest, the thermal paste waste didn't feel too bad.
+
+---
+
+## Building the PC
+
+I built this PC primarily as a workstation rather than a gaming PC. The plan was to avoid frequent upgrades, much like my previous build. This was also my first time building a PC myself! Huge thanks to [PCPartPicker](https://pcpartpicker.com/) and LTT's ["How to Build a PC, the Last Guide You’ll Ever Need!"](https://www.youtube.com/watch?v=s1fxZ-VWs2U) for making the process manageable.
+
+### Pictures
+
+Here are some snapshots from the build process:
+
+![Components in Boxes](./components-in-boxes.jpg)
+_All the components ready to go._
+
+![Pre-Build Test](./pre-build-test.jpg)
+_Ensuring everything works before putting it all together._
+
+### Videos
+
+And here are some videos:
+
+<video width="auto" height="auto" controls>
+  <source src={video1} type="video/mp4" />
+  If you see this message, your browser does not support the video tag.
+</video>
+
+<video width="auto" height="auto" controls>
+  <source src={video2} type="video/mp4" />
+  If you see this message, your browser does not support the video tag.
+</video>
+
+---
+
+## Current Setup
+
+I’m currently running Windows 11 on this system. At the time of writing this, the drivers in the RPM Fusion repository don’t work with Wayland and KDE Plasma 6 for some users with newer NVIDIA GPUs. For now, I’ve chosen to use Windows with WSL until a better Linux solution becomes viable.
+
+---
+
+## Blender Animation
+
+Here’s an animation I made by following [this tutorial series](https://www.youtube.com/watch?v=B0J27sf9N1Y&list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z) by [Blender Guru](https://www.youtube.com/@blenderguru):
+
+<video width="auto" height="auto" controls>
+  <source src={video3} type="video/mp4" />
+  If you see this message, your browser does not support the video tag.
+</video>
+
+Even with my PC, it took around an hour and a half to render this animation.
+
+---
+
+So yeah, that’s basically it! I just wanted to write a short blog post about the build since it’s my first time building a PC.
+
+On top of that, I also upgraded the website to Astro 5. From what I can tell, it won’t have a significant impact, but it’s nice to stay updated.

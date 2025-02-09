@@ -1,0 +1,54 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  items: string[];
+}
+
+const { icon, title, items } = Astro.props;
+---
+
+<details class="group p-4 [&_summary::-webkit-details-marker]:hidden">
+  <summary
+    class="flex cursor-pointer items-center justify-between gap-1.5 text-stone-900 dark:text-stone-100"
+  >
+    <span class="flex flex-row items-center space-x-2">
+      <span class="size-7 text-stone-900 dark:text-stone-100" set:html={icon} />
+      <strong>{title}</strong>
+    </span>
+    <span class="relative size-5 shrink-0">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute inset-0 size-5 opacity-100 group-open:opacity-0"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+        ></path>
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute inset-0 size-5 opacity-0 group-open:opacity-100"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+    </span>
+  </summary>
+  <div class="mt-4 leading-relaxed text-stone-700 dark:text-stone-200">
+    <ul>
+      {items.map((item) => <li>{item}</li>)}
+    </ul>
+  </div>
+</details>
