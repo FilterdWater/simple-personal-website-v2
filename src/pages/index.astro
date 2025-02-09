@@ -1,7 +1,165 @@
 ---
+import { getCollection } from "astro:content";
+import Container from "../components/Container.astro";
 import Layout from "../layouts/Layout.astro";
+import ArrowCard from "../components/ArrowCard.astro";
+import Link from "../components/Link.astro";
+import { dateRange } from "../lib/utils";
+import { SITE, HOME, SOCIALS } from "../lib/consts";
+import { Image } from "astro:assets";
+import ProfilePicture from "../assets/mountain.jpg";
+
+const blog = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
+
+const projects = (await getCollection("projects"))
+  .filter((project) => !project.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
+
+const allwork = (await getCollection("work"))
+  .sort(
+    (a, b) =>
+      new Date(b.data.dateStart).valueOf() -
+      new Date(a.data.dateStart).valueOf(),
+  )
+  .slice(0, SITE.NUM_WORKS_ON_HOMEPAGE);
+
+const work = await Promise.all(
+  allwork.map(async (item) => {
+    const { Content } = await item.render();
+    return { ...item, Content };
+  }),
+);
 ---
 
-<Layout>
-  <div>Hello world</div>
+<Layout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+  <Container>
+    <div
+      class="animate mb-16 flex flex-col items-center justify-center gap-4 text-center sm:flex-row sm:text-start"
+    >
+      <Image
+        src={ProfilePicture}
+        alt="My profile picture, A mountain with a sunset in the back"
+        class="h-32 w-32 rounded-full object-cover"
+      />
+      <div class="flex flex-col justify-center">
+        <div class="text-xl text-black sm:text-2xl dark:text-white">
+          Lars van Holland
+        </div>
+        <div class="text-sm text-black/60 sm:text-base dark:text-white/60">
+          Software / Web developer
+        </div>
+        <div class="text-xs text-black/40 sm:text-sm dark:text-white/40">
+          Student at Technova College
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-16">
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h5 class="font-semibold text-black dark:text-white">Latest posts</h5>
+          <Link href="/blog"> See all posts </Link>
+        </div>
+        <ul class="flex flex-col gap-4">
+          {
+            blog.map((post) => (
+              <li>
+                <ArrowCard entry={post} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h5 class="font-semibold text-black dark:text-white">
+            Recent projects
+          </h5>
+          <Link href="/projects"> See all projects </Link>
+        </div>
+        <ul class="flex flex-col gap-4">
+          {
+            projects.map((project) => (
+              <li>
+                <ArrowCard entry={project} />
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="animate space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-y-2">
+          <h5 class="font-semibold text-black dark:text-white">
+            Work Experience
+          </h5>
+          <Link href="/work"> See all work & details</Link>
+        </div>
+        <ul class="flex flex-col space-y-4">
+          {
+            work.map((entry) => (
+              <li>
+                <div class="text-sm opacity-75">
+                  {dateRange(entry.data.dateStart, entry.data.dateEnd)}
+                </div>
+                <div class="font-semibold">
+                  {entry.data.link ? (
+                    <Link
+                      href={entry.data.link}
+                      aria-label={`Link related to my work at ${entry.data.company}`}
+                      external
+                    >
+                      {entry.data.company}
+                    </Link>
+                  ) : (
+                    <span>{entry.data.company}</span>
+                  )}
+                </div>
+                <div class="text-sm opacity-75">{entry.data.role}</div>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section class="animate space-y-4">
+        <h5 class="font-semibold text-black dark:text-white">Let's Connect</h5>
+        <article>
+          <p>
+            If you want to get in touch with me about something or just to say
+            hi, reach out via the platforms listed below or send me an email.
+          </p>
+        </article>
+        <ul class="flex flex-wrap gap-2">
+          {
+            SOCIALS.map((SOCIAL) => (
+              <li class="flex gap-x-2 text-nowrap">
+                <Link
+                  href={SOCIAL.HREF}
+                  external
+                  aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}
+                >
+                  {SOCIAL.NAME}
+                </Link>
+                {"/"}
+              </li>
+            ))
+          }
+          <li class="line-clamp-1">
+            <Link
+              href={`mailto:${SITE.EMAIL}`}
+              aria-label={`Email ${SITE.NAME}`}
+            >
+              {SITE.EMAIL}
+            </Link>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </Container>
 </Layout>
