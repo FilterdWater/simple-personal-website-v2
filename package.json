@@ -11,6 +11,8 @@
   "dependencies": {
     "@astrojs/mdx": "^4.0.8",
     "@astrojs/sitemap": "^3.2.1",
+    "@fontsource-variable/noto-serif": "^5.1.1",
+    "@fontsource/roboto": "^5.1.1",
     "@tailwindcss/vite": "^4.0.5",
     "astro": "^5.2.5",
     "tailwind-merge": "^3.0.1",
