@@ -33,6 +33,6 @@ export const SOCIALS = [
   },
   {
     NAME: "LinkedIn",
-    HREF: "https://www.linkedin.com/in/lars-van-holland-754a7b269/",
+    HREF: "https://www.linkedin.com/in/lars-van-holland/",
   },
 ];
