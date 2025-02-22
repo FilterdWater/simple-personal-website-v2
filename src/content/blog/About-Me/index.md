@@ -29,10 +29,10 @@ My name is Lars, something you’ve probably already figured out. I’m a 3rd-ye
   Specifically, I use [ProtonMail](https://proton.me/mail).
 
 - **I Often use FOSS**  
-  I use Linux, referred to as [GNU/Linux](https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy) by some, and [GrapheneOS](https://grapheneos.org/) on my phone.
+  I like using Linux, referred to as [GNU/Linux](https://en.wikipedia.org/wiki/GNU/Linux_naming_controversy) by some, and [GrapheneOS](https://grapheneos.org/).
 
 - **I Can Vibrate My Eyes**  
-  Although I often tend to forget I can!
+  Although I often tend to forget I can.
 
 ---
 

@@ -10,10 +10,13 @@ const { icon, title, items } = Astro.props;
 
 <details class="group p-4 [&_summary::-webkit-details-marker]:hidden">
   <summary
-    class="flex cursor-pointer items-center justify-between gap-1.5 text-stone-900 dark:text-stone-100"
+    class="flex cursor-pointer items-center justify-between gap-1.5 text-neutral-900 dark:text-neutral-100"
   >
     <span class="flex flex-row items-center space-x-2">
-      <span class="size-7 text-stone-900 dark:text-stone-100" set:html={icon} />
+      <span
+        class="size-7 text-neutral-900 dark:text-neutral-100"
+        set:html={icon}
+      />
       <strong>{title}</strong>
     </span>
     <span class="relative size-5 shrink-0">
@@ -46,7 +49,7 @@ const { icon, title, items } = Astro.props;
       </svg>
     </span>
   </summary>
-  <div class="mt-4 leading-relaxed text-stone-700 dark:text-stone-200">
+  <div class="mt-4 leading-relaxed text-neutral-700 dark:text-neutral-200">
     <ul>
       {items.map((item) => <li>{item}</li>)}
     </ul>
