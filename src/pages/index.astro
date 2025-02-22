@@ -132,7 +132,7 @@ const work = (await getCollection("work"))
         <ul class="flex flex-wrap gap-2">
           {
             SOCIALS.map((SOCIAL) => (
-              <li class="flex gap-x-2 text-nowrap">
+              <li>
                 <Link
                   href={SOCIAL.HREF}
                   external
@@ -144,7 +144,7 @@ const work = (await getCollection("work"))
               </li>
             ))
           }
-          <li class="line-clamp-1">
+          <li>
             <Link
               href={`mailto:${SITE.EMAIL}`}
               aria-label={`Email ${SITE.NAME}`}

@@ -3,7 +3,7 @@ import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const { title, description, image = "/developer-light.svg" } = Astro.props;
+const { title, description, image = "/developer-amber.svg" } = Astro.props;
 
 // Supports weights 100-900
 import "@fontsource-variable/noto-serif";
@@ -19,21 +19,8 @@ import "@fontsource/roboto/900.css";
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<!-- <link
-  rel="icon"
-  type="image/svg+xml"
-  href="/developer-light.svg"
-  media="(prefers-color-scheme: dark)"
-/>
-<link
-  rel="icon"
-  type="image/svg+xml"
-  href="/developer-dark.svg"
-  media="(prefers-color-scheme: light)"
-/> -->
 <link rel="icon" type="image/x-icon" href="/developer-amber.svg" />
 <meta name="generator" content={Astro.generator} />
-<link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -63,7 +50,6 @@ import "@fontsource/roboto/900.css";
 <script is:inline>
   function init() {
     preloadTheme();
-    onScroll();
     animate();
 
     const backToTop = document.getElementById("back-to-top");
@@ -98,7 +84,9 @@ import "@fontsource/roboto/900.css";
         }
       });
 
-    document.addEventListener("scroll", onScroll);
+    window.addEventListener("load", checkScrollable);
+    window.addEventListener("resize", checkScrollable);
+    document.addEventListener("astro:after-swap", checkScrollable);
   }
 
   function animate() {
@@ -111,20 +99,35 @@ import "@fontsource/roboto/900.css";
     });
   }
 
-  function onScroll() {
-    if (window.scrollY > 0) {
+  function checkScrollable() {
+    const backToTop = document.getElementById("back-to-top");
+    const isScrollable =
+      document.documentElement.scrollHeight > window.innerHeight;
+
+    if (isScrollable) {
       document.documentElement.classList.add("scrolled");
+      backToTop?.removeAttribute("tabindex");
     } else {
       document.documentElement.classList.remove("scrolled");
+      backToTop?.setAttribute("tabindex", "-1");
     }
   }
 
   function scrollToTop(event) {
     event.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+
+    const isKeyboard = event.type === "keydown" || event.detail === 0;
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    if (isKeyboard) {
+      setTimeout(() => {
+        const firstFocusable = document.querySelector(
+          'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])',
+        );
+        firstFocusable?.focus();
+      }, 250);
+    }
   }
 
   function toggleTheme(dark) {
