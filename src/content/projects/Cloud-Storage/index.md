@@ -40,7 +40,8 @@ This project was developed as part of a school assignment with the goal of creat
 ![Database Security](./database-users.png)
 
 **Technology Stack**  
- ![Tech Stack](./tech-stack.png)
+ Mostly TailwindCSS and Laravel
+![Tech Stack](./tech-stack.png)
 
 **Database & Test Data**  
  The application can create test data, aiming for over 100 users, 500 files, and 200 shares.

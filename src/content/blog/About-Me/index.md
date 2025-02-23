@@ -6,7 +6,7 @@ date: "Nov 1, 2024"
 
 # 👋 Hello!
 
-My name is Lars, something you’ve probably already figured out. I’m a 3rd-year student at Technova College, where I’m primarily studying web development. I’m also about to start an internship at [Vormkracht10](https://vormkracht10.nl/), which I’m really excited about!
+My name is Lars, something you’ve probably already figured out. I’m a student at Technova College, where I’m primarily studying web development.
 
 ---
 

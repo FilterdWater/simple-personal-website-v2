@@ -40,6 +40,7 @@ import "@fontsource/roboto/900.css";
 <ClientRouter />
 
 <script>
+  // Prevent duplicate font preloading during Astro page navigation
   document.addEventListener("astro:before-swap", (e) => {
     [...e.newDocument.head.querySelectorAll('link[as="font"]')].forEach(
       (link) => link.remove(),
@@ -105,10 +106,10 @@ import "@fontsource/roboto/900.css";
       document.documentElement.scrollHeight > window.innerHeight;
 
     if (isScrollable) {
-      document.documentElement.classList.add("scrolled");
+      document.documentElement.classList.add("scrollable");
       backToTop?.removeAttribute("tabindex");
     } else {
-      document.documentElement.classList.remove("scrolled");
+      document.documentElement.classList.remove("scrollable");
       backToTop?.setAttribute("tabindex", "-1");
     }
   }
@@ -133,16 +134,18 @@ import "@fontsource/roboto/900.css";
   function toggleTheme(dark) {
     const css = document.createElement("style");
 
+    // Create a temporary <style> element to disable all CSS transitions.
+    // This prevents flickering or smooth animations when toggling the theme.
+    // Without this, users might see a flashing effect as styles change.
     css.appendChild(
       document.createTextNode(
         `* {
-             -webkit-transition: none !important;
-             -moz-transition: none !important;
-             -o-transition: none !important;
-             -ms-transition: none !important;
-             transition: none !important;
-          }
-        `,
+         -webkit-transition: none !important;
+         -moz-transition: none !important;
+         -o-transition: none !important;
+         -ms-transition: none !important;
+         transition: none !important;
+      }`,
       ),
     );
 
