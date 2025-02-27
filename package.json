@@ -1,5 +1,5 @@
 {
-  "name": "simple-personal-portfolio-v2-1-1",
+  "name": "simple-personal-website-v2",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,12 +9,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.0.8",
+    "@astrojs/mdx": "^4.1.0",
     "@astrojs/sitemap": "^3.2.1",
     "@fontsource-variable/noto-serif": "^5.1.1",
     "@fontsource/roboto": "^5.1.1",
     "@tailwindcss/vite": "^4.0.5",
-    "astro": "^5.2.5",
+    "astro": "^5.4.0",
     "tailwind-merge": "^3.0.1",
     "tailwindcss": "^4.0.5"
   },
