@@ -8,13 +8,18 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  class="size-full overflow-y-scroll scheme-light dark:scheme-dark"
+>
   <head>
     <Head title={`${title} | ${SITE.NAME}`} description={description} />
   </head>
-  <body>
+  <body
+    class="flex size-full flex-col bg-neutral-100 font-sans text-black/70 antialiased dark:bg-neutral-950 dark:text-white/70"
+  >
     <Header />
-    <main>
+    <main class="py-32">
       <slot />
     </main>
     <Footer />
