@@ -2,6 +2,12 @@
 import Container from "../components/Container.astro";
 import { SITE } from "../lib/consts";
 import BackToTop from "../components/BackToTop.astro";
+
+const buildDate = new Date().toLocaleDateString("nl-NL", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
 ---
 
 <footer class="animate py-5 text-sm">
@@ -13,7 +19,9 @@ import BackToTop from "../components/BackToTop.astro";
     </div>
     <div class="flex items-center justify-between">
       <div>
-        2025 {`|`}
+        <!-- This date value will get updated whenever i rebuild the website -->
+        {buildDate}
+        {`|`}
         {SITE.NAME}
       </div>
       <div class="flex flex-wrap items-center gap-1">
