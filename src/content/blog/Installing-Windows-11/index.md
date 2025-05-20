@@ -33,13 +33,13 @@ Here’s my personal reinstall process. It’s not the only way, but it works we
    Use [Rufus](https://rufus.ie/en/) to flash the ISO to a USB stick.
 
 4. **Reboot into BIOS/UEFI**  
-   If you're already on Windows, some PCs support running
+   If you're already on Windows, some modern PCs support running
 
    ```powershell
    shutdown /r /fw /t 0
    ```
 
-   in PowerShell to enter firmware settings directly.
+   in PowerShell as admin to enter firmware settings directly. Otherwise you should refer to your motherboards guide on how to get into the BIOS
 
 5. **Boot from the USB stick**.
 
@@ -63,7 +63,7 @@ Here’s my personal reinstall process. It’s not the only way, but it works we
     Let Windows apply background updates silently.
 
 13. **Manually check for updates**  
-    Go to Settings → Windows Update → _Check for updates_.
+    Go to Settings → Windows Update → _Check for updates_ and wait.
 
 14. **Use [Microsoft-Activation-Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts) to go Pro**
 
@@ -75,10 +75,10 @@ Here’s my personal reinstall process. It’s not the only way, but it works we
     - Disable Recall, remove Edge, and turn off Copilot.
     - Use the toggles on the right side to further customize.
 
-17. **Enable extra features (for developers)**  
+17. **(Using WinUtil) Enable extra features (for developers)**  
     In the "Config" section, install **Hyper-V** and **WSL2**.
 
-18. **Set updates to security-only**.
+18. **(Using WinUtil) Set updates to security-only**.
 
 19. **Exit WinUtil and reboot**.
 
