@@ -55,7 +55,7 @@ Here’s my personal reinstall process. It’s not the only way, but it works we
 9. **Complete Windows setup**.
 
 10. **Install drivers**  
-    Install chipset, GPU, network, and other essential drivers.
+    Install chipset, network, and other essential drivers.
 
 11. **Connect to Wi-Fi**.
 
