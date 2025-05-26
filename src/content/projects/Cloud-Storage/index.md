@@ -3,6 +3,7 @@ title: "Cloud Storage"
 description: "A cloud storage application created using Laravel"
 date: "Oct 25, 2024"
 repoURL: "https://github.com/FilterdWater/Cloud-Storage"
+draft: true
 ---
 
 # ☁️ Cloud Storage Application
