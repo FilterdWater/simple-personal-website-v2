@@ -126,7 +126,8 @@ const work = (await getCollection("work"))
         <article>
           <p>
             If you want to get in touch with me about something or just to say
-            hi, reach out via the platforms listed below or send me an email.
+            hi, reach out via the platforms listed below or send me an
+            <s>email</s> (I've only gotten spam)
           </p>
         </article>
         <ul class="flex flex-wrap gap-2">
@@ -144,14 +145,14 @@ const work = (await getCollection("work"))
               </li>
             ))
           }
-          <li>
+          <!-- <li>
             <Link
               href={`mailto:${SITE.EMAIL}`}
               aria-label={`Email ${SITE.NAME}`}
             >
               {SITE.EMAIL}
             </Link>
-          </li>
+          </li> -->
         </ul>
       </section>
     </div>
