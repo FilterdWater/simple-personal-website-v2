@@ -63,26 +63,36 @@ Here’s my personal reinstall process. It’s not the only way, but it works we
     Let Windows apply background updates silently.
 
 13. **Manually check for updates**  
-    Go to Settings → Windows Update → _Check for updates_ and wait.
+    Go to Settings → Windows Update → _Check for updates_ and wait. If part of the update fails restart windows and try again. If it fails again restart windows and run the update troubleshooter in Powershell using.
 
-14. **Use [Microsoft-Activation-Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts) to go Pro**
+    ```bash
+    msdt.exe /id WindowsUpdateDiagnostic
+    ```
 
-15. **Restart after updates are installed**.
+    And then try again.
 
-16. **Run WinUtil**
+14. **Restart after updates are installed**.
+
+15. **Use [Microsoft-Activation-Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts) to get Windows 11 Pro**
+
+16. **(Optional)** Restart again
+
+17. **Check for updates after going Pro just incase**
+
+18. **Run WinUtil**
 
     - Apply the standard debloat and performance tweaks.
-    - Disable Recall, remove Edge, and turn off Copilot.
+    - Apply more tweaks where desired.
     - Use the toggles on the right side to further customize.
 
-17. **(Using WinUtil) Enable extra features (for developers)**  
+19. **(Using WinUtil) Enable extra features (for developers)**  
     In the "Config" section, install **Hyper-V** and **WSL2**.
 
-18. **(Using WinUtil) Set updates to security-only**.
+20. **(Using WinUtil) Set updates to security-only**.
 
-19. **Exit WinUtil and reboot**.
+21. **Exit WinUtil and reboot**.
 
-20. **Fine-tune system settings**
+22. **Fine-tune system settings**
     - Go through all of Windows Settings and adjust preferences.
     - Set your **Region format** to _English (Europe)_, if preferred.
 
@@ -90,4 +100,24 @@ Here’s my personal reinstall process. It’s not the only way, but it works we
 
 ## Final Notes
 
-You can use WinUtil to install apps via **winget** as well. What you install depends on your workflow and personal needs. The important thing is that your system is now clean and minimal.
+You can use WinUtil to install apps via **winget** as well. What you install depends on your workflow and personal needs. The important thing is that your system is now clean and minimal. Keep in mind your user might need a password to install specific software so set that first.
+
+---
+
+## Some good software
+
+[Notepad++](https://notepad-plus-plus.org/) (Text editor)
+
+[Obsidian](https://obsidian.md/) (Markdown editor)
+
+[ImageGlass](https://imageglass.org/) (Image viewer)
+
+[VLC](https://www.videolan.org/) (Media player)
+
+[Chromium](https://www.chromium.org/chromium-projects/) (Web browser)
+
+[uBlock Origin](https://ublockorigin.com/) (Ad content blocker)
+
+[PowerToys](https://learn.microsoft.com/en-us/windows/powertoys/) (Microsoft Windows utilities for power users)
+
+---
