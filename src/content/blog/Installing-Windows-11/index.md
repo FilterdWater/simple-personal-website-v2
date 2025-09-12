@@ -120,4 +120,6 @@ You can use WinUtil to install apps via **winget** as well. What you install dep
 
 [PowerToys](https://learn.microsoft.com/en-us/windows/powertoys/) (Microsoft Windows utilities for power users)
 
+[GlazeWM](https://github.com/glzr-io/glazewm) (A tiling window manager for Windows inspired by i3wm)
+
 ---
