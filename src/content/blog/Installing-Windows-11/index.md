@@ -116,6 +116,8 @@ You can use WinUtil to install apps via **winget** as well. What you install dep
 
 [Chromium](https://www.chromium.org/chromium-projects/) (Web browser)
 
+[Zen Browser](https://zen-browser.app/) (Web browser)
+
 [uBlock Origin](https://ublockorigin.com/) (Ad content blocker)
 
 [PowerToys](https://learn.microsoft.com/en-us/windows/powertoys/) (Microsoft Windows utilities for power users)
