@@ -15,5 +15,5 @@ export default defineConfig({
 
   integrations: [sitemap(), mdx()],
 
-  site: "https://larsvanholland.com/",
+  site: "https://larsvanholland.dev/",
 });
