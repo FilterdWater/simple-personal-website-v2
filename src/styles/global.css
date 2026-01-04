@@ -3,8 +3,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-serif: "Noto Serif Variable", serif;
-  --font-sans: "Roboto", sans-serif;
+  --font-serif: "Noto Serif Variable";
+  --font-sans: "Roboto";
 }
 
 article {
