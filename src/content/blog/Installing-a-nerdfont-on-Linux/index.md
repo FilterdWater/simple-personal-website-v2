@@ -21,6 +21,12 @@ sudo mkdir /usr/share/fonts/nerd-fonts/
 sudo mkdir /usr/share/fonts/nerd-fonts/FONT-NAME/
 ```
 
+Move the font to the new directory
+
+```bash
+sudo mv ZIP-CONTAINING-FONT/*.ttf /usr/share/fonts/nerd-fonts/FONT-NAME/
+```
+
 Re-cache fonts
 
 ```bash
