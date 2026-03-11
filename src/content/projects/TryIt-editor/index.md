@@ -2,7 +2,6 @@
 title: "Tryit Editor"
 description: "A website that mimics some of the W3Schools Tryit Editor functionality"
 date: "Jan 12, 2024"
-demoURL: "http://tryit-editor.larsvanholland.com/"
 repoURL: "https://github.com/FilterdWater/Tryit-Editor"
 draft: true
 ---
