@@ -100,7 +100,7 @@ From the [Ghostty website](https://ghostty.org/): "Ghostty is a fast, feature-ri
 Ghostty is fairly new and written in Zig. I'm currently running it as a snap package and it works great. If it works on your machine I recommend giving it a shot. It comes with a bunch of stuff I currently don't need just like Zed, and just like it, it is very customizable, although I haven't changed much:
 
 ```txt
-background = 000000
+theme = dark:Ayu,light:Ayu Light
 font-family = CaskaydiaMono Nerd Font
 ```
 
