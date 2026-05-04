@@ -22,6 +22,14 @@ CTRL + ALT + F3
 
 You should now see a login prompt.
 
+If you go back to GNOME using:
+
+```bash
+CTRL + ALT + F1
+```
+
+It might be functioning again, if it isn't, go back to the TTY and follow these steps:
+
 2. Log in
 
 Log in as the same user whose GNOME session froze. This gives you access to the system services you need to restart.
@@ -38,7 +46,7 @@ What this does:
 
 gdm3 is the GNOME Display Manager, the service responsible for handling graphical logins and launching GNOME sessions.
 
-Restarting it effectively restarts the entire GNOME desktop environment, similar to 
+Restarting it effectively restarts the entire GNOME desktop environment, similar to
 logging out and back in, but without needing the GUI to respond.
 
 After the service restarts, you should be automatically returned to the GNOME login screen or your session.
